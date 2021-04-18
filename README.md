@@ -9,8 +9,9 @@ java -jar RestAPIExample-1.0-SNAPSHOT.jar
 ```
 <br>
 
-###After starting above jar file. <br>
+### After starting above jar file. <br>
 <br>
+
 * To Create a Contact please use this cURL command :
 
 ```
@@ -21,6 +22,7 @@ curl -L -X POST 'http://localhost:8080/api/create_contact' -H 'Content-Type: app
 }'
 ```
 <br>
+
 * To Modify a Contact please use this cURL command :
 
 ```
@@ -31,18 +33,21 @@ curl -L -X PUT 'http://localhost:8080/api/123456789' -H 'Content-Type: applicati
 }'
 ```
 <br>
+
 * To View all Contacts please use this cURL command :
 
 ```
 curl -L -X GET 'http://localhost:8080/api/all_contacts'
 ```
 <br>
+
 * To View single Contact please use this cURL command :
 
 ```
 curl -L -X GET 'http://localhost:8080/api/123456789'
 ```
 <br>
+
 * To Delete a Contact please use this cURL command :
 
 ```
