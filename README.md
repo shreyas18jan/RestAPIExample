@@ -2,10 +2,16 @@
 <br>
 Rest API Example - Contact : Creation, Modification, Listing and Deletion.<br>
 <br>
-You can download the jar file directly from above and to execute it use the following command:
+Once you execute, following command you should be able to see the jar file:
 
 ```
-java -jar RestAPIExample-1.0-SNAPSHOT.jar
+# This command creates the jar file
+mvn clean install
+
+# Following command executes the jar file
+java -jar RestAPIExample-2.0.jar 
+or
+mvn spring-boot:run
 ```
 <br>
 
