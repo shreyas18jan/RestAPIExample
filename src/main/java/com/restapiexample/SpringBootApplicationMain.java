@@ -8,10 +8,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @SpringBootApplication
 @CrossOrigin("*")
-@EnableJpaRepositories("com.restapiexample.repository")
-@EntityScan("com.restapiexample.model")
 public class SpringBootApplicationMain {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         SpringApplication.run(SpringBootApplicationMain.class);
     }
 }
