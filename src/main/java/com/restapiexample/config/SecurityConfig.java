@@ -21,8 +21,12 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(
                 (requests) -> requests
+                        // Used for Selective Authentication
                         .requestMatchers("/api/**").permitAll()
                         .requestMatchers("/extended/**").authenticated()
+                        // Used for Selective Role based Authentication
+//                        .requestMatchers("/api/**").hasRole("USER")
+//                        .requestMatchers("/extended/**").hasRole("ADMIN")
                         .anyRequest().permitAll()
         ).httpBasic(withDefaults());
         http.csrf().disable();
@@ -33,10 +37,20 @@ public class SecurityConfig {
     public InMemoryUserDetailsManager userDetailsService() {
         UserDetails user = User.builder()
                 .username("user")
-                .password(passwordEncoder().encode("password"))
+                .password(passwordEncoder().encode("COMMON_PASSWORD"))
                 .roles("USER")
                 .build();
+
+        // Used for Selective Role based Authentication
+//        UserDetails admin = User.builder()
+//                .username("admin")
+//                .password(passwordEncoder().encode("COMMON_ADMIN_PASSWORD"))
+//                .roles("ADMIN")
+//                .build();
+
         return new InMemoryUserDetailsManager(user);
+        // Used for Selective Role based Authentication
+//        return new InMemoryUserDetailsManager(user, admin);
     }
 
     @Bean
